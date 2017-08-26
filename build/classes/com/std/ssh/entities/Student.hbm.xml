@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-5 22:48:32 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.std.ssh.entities.Student" table="STUDENT">
+        <id name="s_id" type="java.lang.Integer">
+            <column name="S_ID" />
+            <generator class="native" />
+        </id>
+        <property name="s_name" type="java.lang.String">
+            <column name="S_NAME" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        <property name="birthday" type="java.lang.String">
+            <column name="BIRTHDAY" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="PHONE" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <many-to-one name="banji" class="com.std.ssh.entities.Banji"  lazy="false">
+            <column name="BANJI_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

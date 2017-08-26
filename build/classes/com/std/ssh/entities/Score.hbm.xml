@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-5 22:48:32 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.std.ssh.entities.Score" table="SCORE">
+        <id name="f_id" type="java.lang.Integer">
+            <column name="F_ID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="student" class="com.std.ssh.entities.Student" lazy="false" >
+            <column name="STUDENT_ID" />
+        </many-to-one>
+        <many-to-one name="course" class="com.std.ssh.entities.Course" lazy="false">
+            <column name="COURSE_ID" />
+        </many-to-one>
+        <property name="score" type="java.lang.Integer">
+            <column name="SCORE" />
+        </property>
+    </class>
+</hibernate-mapping>

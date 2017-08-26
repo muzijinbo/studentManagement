@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+  <bean id="banjiDao" class="com.std.ssh.dao.BanjiDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="banjiService" class="com.std.ssh.services.BanjiService">
+		<property name="banjidao" ref="banjiDao"></property>
+	</bean>
+	<bean id="banjiAction" class="com.std.ssh.actions.BanjiAction"
+			scope="prototype">
+		<property name="banjiservice" ref="banjiService"></property>
+	</bean>
+	<bean id="studentDao" class="com.std.ssh.dao.StudentDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="studentService" class="com.std.ssh.services.StudentService">
+		<property name="studentDao" ref="studentDao"></property>
+	</bean>
+	<bean id="studentAction" class="com.std.ssh.actions.StudentAction">
+		<property name="studentService" ref="studentService"></property>
+	</bean>
+	<bean id="courseDao" class="com.std.ssh.dao.CourseDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="courseService" class="com.std.ssh.services.CourseService">
+		<property name="courseDao" ref="courseDao"></property>
+	</bean>
+	<bean id="courseAction" class="com.std.ssh.actions.CourseAction">
+		<property name="courseService" ref="courseService"></property>
+	</bean>
+	<bean id="scoreDao" class="com.std.ssh.dao.ScoreDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="scoreService" class="com.std.ssh.services.ScoreService">
+		<property name="scoreDao" ref="scoreDao"></property>
+	</bean>
+	<bean id="scoreAction" class="com.std.ssh.actions.ScoreAction">
+		<property name="scoreService" ref="scoreService"></property>
+	</bean>
+	
+</beans>
